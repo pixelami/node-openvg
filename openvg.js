@@ -595,8 +595,8 @@ var VGUArcType = openVG.VGUArcType = {
 };
 
 var VGUArcTypeReverse = openVG.VGUArcTypeReverse =
-  Object.keys(VGUErrorCode).reduce(function(previous, current) {
-    previous[VGUErrorCode[current]] = current;
+  Object.keys(VGUArcType).reduce(function(previous, current) {
+    previous[VGUArcType[current]] = current;
     return previous;
   }, {});
 
