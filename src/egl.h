@@ -23,7 +23,7 @@ extern EGLConfig Config;
 
 extern void InitBindings(Handle<Object> target);
 
-void Init();
+void Init(int32_t layer);
 void InitOpenGLES();
 void Finish();
 

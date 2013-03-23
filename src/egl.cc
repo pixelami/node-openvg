@@ -24,7 +24,8 @@ extern void egl::InitBindings(Handle<Object> target) {
   NODE_SET_METHOD(target, "makeCurrent"   , egl::MakeCurrent);
 }
 
-extern void egl::Init() {
+extern void egl::Init(int32_t layer) {
+
   EGLBoolean result;
   int32_t success = 0;
 
@@ -89,7 +90,7 @@ extern void egl::Init() {
   dispman_update  = vc_dispmanx_update_start(0);
 
   dispman_element =
-    vc_dispmanx_element_add(dispman_update, dispman_display, 0 /*layer */ ,
+    vc_dispmanx_element_add(dispman_update, dispman_display, layer /*layer */ ,
                             &dst_rect, 0 /*src */ , &src_rect,
                             DISPMANX_PROTECTION_NONE,
                             0 /*alpha */ , 0 /*clamp */ ,

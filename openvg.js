@@ -740,8 +740,9 @@ var VGPathCommandNdsReverse = openVG.VGPathCommandNdsReverse =
   }, {});
 
 
-openVG.init = function() {
-  openVG.startUp(screen);
+openVG.init = function(layer) {
+  if(layer == undefined) layer = 0;
+  openVG.startUp(screen, layer);
 };
 
 openVG.finish = function() {

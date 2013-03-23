@@ -216,9 +216,9 @@ template<class C> class TypedArrayWrapper {
 Handle<Value> openvg::StartUp(const Arguments& args) {
   HandleScope scope;
 
-  CheckArgs1(startUp, screen, Object);
+  CheckArgs2(startUp, screen, Object, layer, Int32);
 
-  egl::Init();
+  egl::Init(args[1]->Int32Value());
 
   if (kInitOpenGLES) {
     egl::InitOpenGLES();
